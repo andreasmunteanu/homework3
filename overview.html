@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Bakery — Overview</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid orange;
+            margin: 0 auto 15px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 1.2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .profile-desc {
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .skills-list li {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #ddd;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            font-size: 1.1em;
+        }
+
+        .content-area h2 {
+            margin-top: 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .product-card h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .product-card .price-tag {
+            display: inline-block;
+            background: #f5f5f5;
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .product-card.featured {
+            border: 3px solid orange;
+            background: linear-gradient(135deg, #fff 0%, #fdf6ee 100%);
+            position: relative;
+        }
+
+
+        .about-highlights {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .highlight-stat {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .highlight-stat .stat-number {
+            font-size: 1.8rem;
+            color: orange;
+            font-weight: 700;
+            display: block;
+        }
+
+        .highlight-stat .stat-label {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-highlights {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Luca Bakery</h1>
+        <p>Covrigi proaspeți &amp; produse de patiserie din 2010</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu &amp; Prices</a></li>
+            <li><a href="overview.html" class="active">Overview</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+
+        <div class="overview-grid">
+
+            <aside class="sidebar">
+
+                <div class="sidebar-card">
+                    <img class="profile-photo"
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf9XZveORA1jv5G8WsKFp7LHMBTvCp6LQqDA&s"
+                         alt="Luca Bakery logo">
+                    <h2 class="profile-name">Luca Bakery</h2>
+                    <p class="profile-desc">Romania's favourite bakery chain — serving fresh covrigi, pastries, and traditional baked goods since 2010.</p>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Our Specialties</h3>
+                    <ul class="skills-list">
+                        <li>Covrigi</li>
+                        <li>Plăcinte</li>
+                        <li>Merdenele</li>
+                        <li>Cozonac</li>
+                        <li>Eclere</li>
+                        <li>Pizza LUCA</li>
+                        <li>Fresh Coffee</li>
+                        <li>Natural Juices</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Contact</h3>
+                    <ul class="contact-list">
+                        <li> Str. Mercy nr. 5, Timișoara</li>
+                        <li> +40 256 123 456</li>
+                        <li> <a href="mailto:contact@luca-timisoara.ro">contact@luca-timisoara.ro</a></li>
+                        <li> Mon-Fri: 6:30-20:00</li>
+                    </ul>
+                </div>
+
+            </aside>
+
+            <div class="content-area">
+
+                <section>
+                    <h2>Bakery at a Glance</h2>
+                    <p>Simigeria LUCA has grown from a humble bakery into a national network of over 150 locations, all operating under 100% Romanian capital. Every product is baked fresh on-site, multiple times a day.</p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-stat">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Locations</span>
+                        </div>
+                        <div class="highlight-stat">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Years of Tradition</span>
+                        </div>
+                        <div class="highlight-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Romanian Capital</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Signature Products</h2>
+                    <p>Discover our most celebrated creations — each baked with love and tradition.</p>
+
+                    <div class="product-grid">
+
+                        <div class="product-card featured">
+                            <h3>Covrig cu Cașcaval</h3>
+                            <p>A fluffy pretzel with a golden, slightly crunchy baked cheese crust. Our #1 bestseller across all locations.</p>
+                            <span class="price-tag">3.50 RON</span>
+                        </div>
+
+                        <div class="product-card">
+                            <h3>LUCA Tradițional</h3>
+                            <p>Classic pretzel dough with a warm mozzarella core, wrapped in fine ham and topped with roasted poppy seeds.</p>
+                            <span class="price-tag">5.00 RON</span>
+                        </div>
+
+                        <div class="product-card">
+                            <h3>Plăcintă cu Brânză</h3>
+                            <p>Flaky pastry filled with fresh, creamy cheese — a Romanian comfort food staple, baked to golden perfection.</p>
+                            <span class="price-tag">7.00 RON</span>
+                        </div>
+
+                        <div class="product-card">
+                            <h3>Cozonac cu Nucă</h3>
+                            <p>Traditional sweet bread with a rich walnut filling, perfect for holidays or any special occasion.</p>
+                            <span class="price-tag">25.00 RON</span>
+                        </div>
+
+                        <div class="product-card">
+                            <h3>Pizza LUCA</h3>
+                            <p>Generous slices with rich tomato sauce, melted cheese, and hearty toppings on a soft pretzel-like dough base.</p>
+                            <span class="price-tag">8.00 RON</span>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Luca Bakery — Andreas Munteanu | <a href="contact.html">Get in touch</a></p>
+    </footer>
+
+</body>
+</html>

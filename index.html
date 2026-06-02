@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Luca Bakery — Fresh covrigi, pastries, and traditional Romanian baked goods in Timișoara since 2010.">
+    <title>Luca Bakery — Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+            background: linear-gradient(135deg, #5c3d2e 0%, #7a5c4f 40%, #a07860 70%, #5c3d2e 100%);
+            background-size: 300% 300%;
+            animation: heroShift 8s ease infinite;
+            position: relative;
+            overflow: hidden;
+            padding: 36px 20px;
+        }
+
+        @keyframes heroShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        header::before,
+        header::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        header::before {
+            width: 200px;
+            height: 200px;
+            background: #d4a574;
+            top: -60px;
+            right: -40px;
+            animation: floatBubble 6s ease-in-out infinite;
+        }
+
+        header::after {
+            width: 130px;
+            height: 130px;
+            background: #e8d5c4;
+            bottom: -30px;
+            left: 10%;
+            animation: floatBubble 7s ease-in-out infinite 1s;
+        }
+
+        @keyframes floatBubble {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        header h1 {
+            position: relative;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            position: relative;
+        }
+
+        .announcement-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a574, #c0945a);
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.88em;
+            font-weight: bold;
+            margin-top: 14px;
+            box-shadow: 0 3px 12px rgba(212, 165, 116, 0.35);
+            text-decoration: none;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .announcement-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(212, 165, 116, 0.45);
+        }
+
+        .announcement-badge:focus-visible {
+            outline: 3px solid #e8d5c4;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Luca Bakery</h1>
+        <p>Covrigi proaspeți &amp; produse de patiserie din 2010</p>
+        <a href="portfolio.html" class="announcement-badge" aria-label="View our project portfolio">
+            Check out our new Portfolio page
+        </a>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu &amp; Prices</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2>Welcome to Luca</h2>
+            <p>
+                Simigeria LUCA is an iconic, widely loved Romanian bakery chain that has taken the country by storm.
+                Famous for
+                its mouthwatering pretzels (covrigi), savory snacks, and pastry products, LUCA offers a warm, nostalgic
+                atmosphere reminiscent of traditional Romanian baking. It is the perfect spot to grab a quick,
+                delicious, and
+                consistent bite, whether you are starting your morning commute or taking an afternoon stroll through the
+                city.
+            </p>
+        </section>
+
+        <section>
+            <h2>Featured Products</h2>
+            <p>Here are some of our most popular items this month:</p>
+            <ul>
+                <li><strong>Covrig cu Cașcaval (Cheese Pretzel)</strong> — A fluffy pretzel with a beautifully golden,
+                    slightly
+                    crunchy, and aromatic baked cheese crust. It is a massive fan-favorite.</li>
+                <li><strong>LUCA Tradițional</strong> — A signature staple. This is a classic pretzel dough baked with a
+                    warm
+                    core of mozzarella that is carefully wrapped in fine ham, all topped with roasted poppy seeds.
+                </li>
+                <li><strong>Merdenea</strong> — A beloved traditional Romanian pastry made of flaky, buttery dough
+                    filled with
+                    savory cheese—perfectly crispy on the outside and soft and warm on the inside.</li>
+                <li><strong>Pizza LUCA</strong> — Generously sized slices of pizza baked fresh in-store, combining a
+                    rich tomato
+                    sauce, melted cheese, and hearty toppings on a soft, pretzel-like dough base.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Hours &amp; Location</h2>
+            <p>You can find us at <strong>Timișoara – Centru (Central Area).</strong> Stop by during our opening hours:
+            </p>
+            <ul class="hours-list">
+                <li><strong>Monday – Friday:</strong> 6:30 – 20:00</li>
+                <li><strong>Saturday:</strong> 7:00 – 18:00</li>
+                <li><strong>Sunday:</strong> 8:00 – 14:00</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Luca Bakery — Andreas Munteanu | <a href="contact.html">Get in touch</a></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Luca Bakery project portfolio — submit and browse bakery projects, recipes, and community contributions.">
+    <title>Luca Bakery — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <h1>Luca Bakery</h1>
+        <p>Covrigi proaspeți &amp; produse de patiserie din 2010</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu &amp; Prices</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+
+        <section class="portfolio-hero" aria-labelledby="portfolio-heading">
+            <h2 id="portfolio-heading">Project Portfolio</h2>
+            <p>Showcase bakery projects, recipe experiments, and community contributions. Submit your project below and
+                see it appear in the table instantly.</p>
+        </section>
+
+        <div class="stats-ribbon" aria-label="Portfolio statistics">
+            <div class="stat-item">
+                <span class="stat-val" id="stat-submitted">0</span>
+                <span class="stat-lbl">Projects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">6</span>
+                <span class="stat-lbl">Categories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">150+</span>
+                <span class="stat-lbl">Locations</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">2010</span>
+                <span class="stat-lbl">Founded</span>
+            </div>
+        </div>
+
+        <section class="portfolio-form-section" aria-labelledby="form-heading">
+            <h2 id="form-heading">Submit your project</h2>
+            <p>Fill in the details below. All fields marked with <strong>*</strong> are required.</p>
+
+            <form id="project-form" novalidate>
+
+                <fieldset>
+                    <legend>Project details</legend>
+
+                    <label for="project-name">
+                        Project name <span class="required-mark" aria-hidden="true">*</span>
+                    </label>
+                    <input type="text" id="project-name" name="project-name" required placeholder="e.g. My project"
+                        autocomplete="off">
+                    <span class="field-help">Title for your project.</span>
+
+                    <label for="project-desc">
+                        Description <span class="required-mark" aria-hidden="true">*</span>
+                    </label>
+                    <textarea id="project-desc" name="project-desc" required
+                        placeholder="Describe your project."></textarea>
+
+                    <label for="project-url">
+                        Project URL <span class="required-mark" aria-hidden="true">*</span>
+                    </label>
+                    <input type="url" id="project-url" name="project-url" required
+                        placeholder="https://example.com/my-project">
+                    <span class="field-help">Full URL including https://</span>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Classification &amp; Media</legend>
+
+                    <label for="project-tech">
+                        Technologies used <span class="required-mark" aria-hidden="true">*</span>
+                    </label>
+                    <select id="project-tech" name="project-tech" required multiple size="4"
+                        aria-describedby="tech-help">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="figma">Figma</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="project-image">
+                        Project image (optional)
+                    </label>
+                    <input type="file" id="project-image" name="project-image"
+                        accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml" aria-describedby="image-help">
+                    <span class="field-help" id="image-help">JPEG, PNG, GIF, WebP, or SVG — max 5 MB.</span>
+
+                    <label for="project-date">
+                        Completion date <span class="required-mark" aria-hidden="true">*</span>
+                    </label>
+                    <input type="date" id="project-date" name="project-date" required>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Add Project</button>
+                    <button type="reset" class="btn btn-secondary" id="reset-btn">Reset Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="portfolio-table-section" id="projects-table-section" aria-labelledby="table-heading">
+            <h2 id="table-heading">
+                Submitted projects
+                <span class="project-count" id="project-count" aria-label="Number of projects">0</span>
+            </h2>
+
+            <div id="empty-state" class="empty-state" role="status">
+                <p>No projects submitted yet.</p>
+            </div>
+
+            <div class="table-wrapper" id="table-wrapper" hidden>
+                <table>
+                    <caption>Portfolio of submitted bakery projects</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Project Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Technologies</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Completed</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projects-tbody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Luca Bakery — Andreas Munteanu | <a href="contact.html">Get in touch</a></p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
